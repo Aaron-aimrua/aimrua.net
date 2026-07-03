@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros | AIMRUA.NET</title>
+    <link rel="icon" href="LOGO.png" type="image/x-icon">
+    <style>
+        /* Variables Globales (Idénticas a tu branding corporativo) */
+        :root {
+            --bg-gradient: radial-gradient(circle at 80% 20%, #0c3a4d 0%, #0c1117 50%, #050608 100%);
+            --color-text-white: #ffffff;
+            --color-text-light: #f0f6f8;
+            --color-text-secondary: #7fa1b5;
+            --color-text-accent: #1cbcd4; /* Azul/Cian brillante */
+            --color-text-muted: rgba(255, 255, 255, 0.4);
+            --color-divider: rgba(28, 188, 212, 0.25);
+
+            /* Contenedores translúcidos */
+            --bg-card: rgba(12, 17, 23, 0.6);
+            --border-card: rgba(28, 188, 212, 0.15);
+            --border-card-hover: rgba(28, 188, 212, 0.4);
+
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --padding-body: 40px 20px;
+            --max-width-container: 1000px;
+            --transition-fade: fadeIn 1.2s ease-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--color-text-white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--padding-body);
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+        }
+
+        /* Encabezado / Navegación */
+        .header {
+            width: 100%;
+            max-width: var(--max-width-container);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .logo-image {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-text-accent);
+        }
+
+        /* Contenido Principal */
+        .main-content {
+            width: 100%;
+            max-width: var(--max-width-container);
+            flex: 1;
+            animation: var(--transition-fade);
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .tagline {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--color-text-accent);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            color: var(--color-text-light);
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--color-divider), transparent);
+            margin: 0 auto;
+        }
+
+        /* Sección de Historia / Manifiesto */
+        .story-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 50px;
+            backdrop-filter: blur(5px);
+            line-height: 1.8;
+        }
+
+        .story-section p {
+            color: var(--color-text-secondary);
+            font-size: 1.05rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .story-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-text {
+            color: var(--color-text-light);
+            font-weight: 400;
+        }
+
+        /* Cuadrícula de Valores o Equipo */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .value-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-card-hover);
+        }
+
+        .value-icon {
+            font-size: 1.5rem;
+            color: var(--color-text-accent);
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .value-title {
+            font-size: 1.2rem;
+            color: var(--color-text-light);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .value-desc {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Pie de página */
+        .footer {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            letter-spacing: 0.5px;
+            margin-top: 40px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Animación suave */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Ajustes Pantallas Pequeñas */
+        @media (max-width: 600px) {
+            .title { font-size: 2rem; }
+            .story-section { padding: 25px; }
+            .values-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="LOGO.png" alt="Logo AIMRUA" class="logo-image">
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="blog.html">Blog</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="about-header">
+            <p class="tagline">Conócenos</p>
+            <h1 class="title">Nuestra Identidad</h1>
+            <div class="divider"></div>
+        </div>
+
+        <section class="story-section">
+            <p>En <span class="highlight-text">AIMRUA.NET</span>, nos apasiona conectar ideas, tecnología y diseño para construir experiencias digitales que inspiren. Nacimos con el firme propósito de crear un espacio donde la innovación y la simplicidad convergen de manera natural.</p>
+            <p>Creemos que la era digital exige soluciones claras, dinámicas y estéticas. Por eso, dedicamos nuestros esfuerzos a explorar nuevas fronteras tecnológicas, compartiendo nuestro conocimiento a través de nuestra bitácora y desarrollando herramientas que impulsen el crecimiento de nuestra comunidad.</p>
+        </section>
+
+        <section class="values-grid">
+            
+            <div class="value-card">
+                <div class="value-icon">01</div>
+                <h2 class="value-title">Innovación</h2>
+                <p class="value-desc">Buscamos constantemente evolucionar nuestras metodologías y mantenernos a la vanguardia de los estándares tecnológicos actuales.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">02</div>
+                <h2 class="value-title">Diseño Limpio</h2>
+                <p class="value-desc">Nos regimos bajo la premisa de que la elegancia y la usabilidad van de la mano. Menos es más cuando se comunica con claridad.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">03</div>
+                <h2 class="value-title">Comunidad</h2>
+                <p class="value-desc">Creamos este ecosistema para aportar valor. Nuestro conocimiento está al servicio de quienes buscan construir el futuro web hoy.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        © 2026 · Todos los derechos reservados
+    </footer>
+
+</body>
+</html>
