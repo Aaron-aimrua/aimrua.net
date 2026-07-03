@@ -8,26 +8,22 @@
     <style>
         /* Variables Globales */
         :root {
-            /* Colores basados en el logo AIMRUA */
             --bg-gradient: radial-gradient(circle at 80% 20%, #0c3a4d 0%, #0c1117 50%, #050608 100%);
             --color-text-white: #ffffff;
             --color-text-light: #f0f6f8;
             --color-text-secondary: #7fa1b5;
-            --color-text-accent: #1cbcd4; /* Azul/Cian brillante */
+            --color-text-accent: #1cbcd4; 
             --color-text-muted: rgba(255, 255, 255, 0.4);
             --color-divider: rgba(28, 188, 212, 0.25);
 
-            /* Tipografía y Espaciado */
             --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             --padding-body: 40px 20px;
             --max-width-header: 1200px;
             --max-width-content: 600px;
 
-            /* Animaciones */
             --transition-fade: fadeIn 1.5s ease-out;
         }
 
-        /* Reset básico y configuración de la fuente */
         * {
             margin: 0;
             padding: 0;
@@ -37,41 +33,52 @@
         body {
             font-family: var(--font-main);
             color: var(--color-text-white);
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
             padding: var(--padding-body);
             background: var(--bg-gradient);
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
-        /* Contenedor del Logo (Esquina superior izquierda) */
+        /* Encabezado / Navegación */
         .header {
             width: 100%;
             max-width: var(--max-width-header);
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 8px;
-        }
-
-        /* Icono del logo hecho con CSS (tres líneas onduladas/estilo olas) */
-        .logo-icon {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
         }
 
         .logo-image {
-            width: 80px;
-            height: 80px;
+            width: 65px;
+            height: 65px;
             object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-text-accent);
         }
 
         /* Contenido Central */
@@ -79,6 +86,7 @@
             text-align: center;
             max-width: var(--max-width-content);
             animation: var(--transition-fade);
+            margin: auto 0;
         }
 
         .tagline {
@@ -98,7 +106,6 @@
             color: var(--color-text-light);
         }
 
-        /* Línea divisoria sutil */
         .divider {
             width: 60px;
             height: 1px;
@@ -118,29 +125,32 @@
             font-size: 0.75rem;
             color: var(--color-text-muted);
             letter-spacing: 0.5px;
+            margin-top: 40px;
+            text-align: center;
+            width: 100%;
         }
 
-        /* Animación suave de entrada */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Adaptación para pantallas pequeñas */
         @media (max-width: 600px) {
             .title { font-size: 1.8rem; }
             .description { font-size: 0.9rem; }
         }
-</style>
+    </style>
 </head>
 <body>
 
     <header class="header">
         <div class="logo">
-            <div class="logo-icon">
-                <img src="LOGO.png" alt="Logo" class="logo-image">
-            </div>
+            <img src="LOGO.png" alt="Logo AIMRUA" class="logo-image">
         </div>
+        <nav class="nav-links">
+            <a href="AMAZON/GENERAL.html">Blog</a>
+            <a href="about.html">Sobre Nosotros</a>
+        </nav>
     </header>
 
     <main class="main-content">
@@ -151,7 +161,7 @@
     </main>
 
     <footer class="footer">
-        © 2026 · Todos los derechos reservados
+        © 2026 · Todos los derechos reservados · 
         <a href="AMAZON/GENERAL.html" style="color: var(--color-text-accent); text-decoration: none;">AIMRUA.NET</a>
     </footer>
 

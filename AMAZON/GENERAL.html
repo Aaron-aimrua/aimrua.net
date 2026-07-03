@@ -6,7 +6,7 @@
     <title>Blog | AIMRUA.NET</title>
     <link rel="icon" href="../LOGO.png" type="image/x-icon">
     <style>
-        /* Variables Globales (Manteniendo tu paleta original) */
+        /* Variables Globales */
         :root {
             --bg-gradient: radial-gradient(circle at 80% 20%, #0c3a4d 0%, #0c1117 50%, #050608 100%);
             --color-text-white: #ffffff;
@@ -16,7 +16,6 @@
             --color-text-muted: rgba(255, 255, 255, 0.4);
             --color-divider: rgba(28, 188, 212, 0.25);
             
-            /* Nuevas variables para las tarjetas del blog */
             --bg-card: rgba(12, 17, 23, 0.6);
             --border-card: rgba(28, 188, 212, 0.15);
             --border-card-hover: rgba(28, 188, 212, 0.4);
@@ -43,10 +42,9 @@
             align-items: center;
             padding: var(--padding-body);
             background: var(--bg-gradient);
-            background-attachment: fixed; /* Evita que el fondo se corte al hacer scroll */
+            background-attachment: fixed;
         }
 
-        /* Header / Navegación */
         .header {
             width: 100%;
             max-width: var(--max-width-container);
@@ -62,6 +60,11 @@
             object-fit: contain;
         }
 
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
         .nav-links a {
             color: var(--color-text-secondary);
             text-decoration: none;
@@ -74,7 +77,6 @@
             color: var(--color-text-accent);
         }
 
-        /* Contenedor Principal */
         .main-content {
             width: 100%;
             max-width: var(--max-width-container);
@@ -111,7 +113,6 @@
             margin: 0 auto;
         }
 
-        /* Cuadrícula de Artículos (Grid) */
         .articles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -119,7 +120,6 @@
             margin-bottom: 60px;
         }
 
-        /* Tarjeta de Artículo */
         .article-card {
             background: var(--bg-card);
             border: 1px solid var(--border-card);
@@ -137,11 +137,10 @@
             box-shadow: 0 10px 20px rgba(28, 188, 212, 0.05);
         }
 
-        /* Imagen destacada simulada u opcional */
         .article-image {
             width: 100%;
             height: 180px;
-            background: #0c1c24; /* Fondo oscuro por si no hay imagen */
+            background: #0c1c24;
             object-fit: cover;
             border-bottom: 1px solid var(--border-card);
         }
@@ -194,7 +193,6 @@
             color: var(--color-text-accent);
         }
 
-        /* Pie de página */
         .footer {
             font-size: 0.75rem;
             color: var(--color-text-muted);
@@ -204,13 +202,11 @@
             text-align: center;
         }
 
-        /* Animación */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Responsivo */
         @media (max-width: 600px) {
             .title { font-size: 2rem; }
             .articles-grid { grid-template-columns: 1fr; }
@@ -225,6 +221,7 @@
         </div>
         <nav class="nav-links">
             <a href="../index.html">Inicio</a>
+            <a href="../about.html">Sobre Nosotros</a>
         </nav>
     </header>
 
@@ -236,7 +233,6 @@
         </div>
 
         <section class="articles-grid">
-            
             <article class="article-card">
                 <div class="article-image" style="background: linear-gradient(135deg, #0c3a4d, #050608);"></div>
                 <div class="article-body">
@@ -266,7 +262,6 @@
                     <a href="articulo-3.html" class="read-more">Leer artículo →</a>
                 </div>
             </article>
-
         </section>
     </main>
 
