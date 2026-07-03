@@ -6,6 +6,27 @@
     <title>Próximamente - Estamos construyendo algo nuevo | AIMRUA.NET</title>
     <link rel="icon" href="LOGO.png" type="image/x-icon">
     <style>
+        /* Variables Globales */
+        :root {
+            /* Colores basados en el logo AIMRUA */
+            --bg-gradient: radial-gradient(circle at 80% 20%, #0c3a4d 0%, #0c1117 50%, #050608 100%);
+            --color-text-white: #ffffff;
+            --color-text-light: #f0f6f8;
+            --color-text-secondary: #7fa1b5;
+            --color-text-accent: #1cbcd4; /* Azul/Cian brillante */
+            --color-text-muted: rgba(255, 255, 255, 0.4);
+            --color-divider: rgba(28, 188, 212, 0.25);
+
+            /* Tipografía y Espaciado */
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --padding-body: 40px 20px;
+            --max-width-header: 1200px;
+            --max-width-content: 600px;
+
+            /* Animaciones */
+            --transition-fade: fadeIn 1.5s ease-out;
+        }
+
         /* Reset básico y configuración de la fuente */
         * {
             margin: 0;
@@ -14,23 +35,22 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #ffffff;
+            font-family: var(--font-main);
+            color: var(--color-text-white);
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            padding: 40px 20px;
-            /* Fondo con degradado similar a la imagen (oscuro con destellos cálidos/azules) */
-            background: radial-gradient(circle at 80% 20%, #4a3319 0%, #1a1c23 50%, #111317 100%);
+            padding: var(--padding-body);
+            background: var(--bg-gradient);
             overflow: hidden;
         }
 
         /* Contenedor del Logo (Esquina superior izquierda) */
         .header {
             width: 100%;
-            max-width: 1200px;
+            max-width: var(--max-width-header);
             display: flex;
             justify-content: flex-start;
         }
@@ -57,15 +77,15 @@
         /* Contenido Central */
         .main-content {
             text-align: center;
-            max-width: 600px;
-            animation: fadeIn 1.5s ease-out;
+            max-width: var(--max-width-content);
+            animation: var(--transition-fade);
         }
 
         .tagline {
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 4px;
-            color: #c99353; /* Tono dorado/bronce del texto superior */
+            color: var(--color-text-accent);
             margin-bottom: 20px;
             font-weight: 600;
         }
@@ -75,20 +95,20 @@
             font-weight: 400;
             letter-spacing: 1px;
             margin-bottom: 25px;
-            color: #f5f5f7;
+            color: var(--color-text-light);
         }
 
         /* Línea divisoria sutil */
         .divider {
             width: 60px;
             height: 1px;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+            background: linear-gradient(to right, transparent, var(--color-divider), transparent);
             margin: 0 auto 25px auto;
         }
 
         .description {
             font-size: 1rem;
-            color: #a0a5b5;
+            color: var(--color-text-secondary);
             line-height: 1.6;
             font-weight: 300;
         }
@@ -96,7 +116,7 @@
         /* Pie de página */
         .footer {
             font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.4);
+            color: var(--color-text-muted);
             letter-spacing: 0.5px;
         }
 
@@ -111,7 +131,7 @@
             .title { font-size: 1.8rem; }
             .description { font-size: 0.9rem; }
         }
-    </style>
+</style>
 </head>
 <body>
 
