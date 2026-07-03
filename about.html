@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | AIMRUA.NET</title>
-    <link rel="icon" href="../LOGO.png" type="image/x-icon">
+    <title>Sobre Nosotros | AIMRUA.NET</title>
+    <link rel="icon" href="LOGO.png" type="image/x-icon">
     <style>
         /* Variables Globales */
         :root {
@@ -15,15 +15,15 @@
             --color-text-accent: #1cbcd4; 
             --color-text-muted: rgba(255, 255, 255, 0.4);
             --color-divider: rgba(28, 188, 212, 0.25);
-            
+
             --bg-card: rgba(12, 17, 23, 0.6);
             --border-card: rgba(28, 188, 212, 0.15);
             --border-card-hover: rgba(28, 188, 212, 0.4);
 
             --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             --padding-body: 40px 20px;
-            --max-width-container: 1100px;
-            --transition-fade: fadeIn 1s ease-out;
+            --max-width-container: 1000px;
+            --transition-fade: fadeIn 1.2s ease-out;
         }
 
         * {
@@ -51,7 +51,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .logo-image {
@@ -84,7 +84,7 @@
             animation: var(--transition-fade);
         }
 
-        .blog-header {
+        .about-header {
             text-align: center;
             margin-bottom: 50px;
         }
@@ -113,84 +113,75 @@
             margin: 0 auto;
         }
 
-        .articles-grid {
+        .story-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 50px;
+            backdrop-filter: blur(5px);
+            line-height: 1.8;
+        }
+
+        .story-section p {
+            color: var(--color-text-secondary);
+            font-size: 1.05rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .story-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-text {
+            color: var(--color-text-light);
+            font-weight: 400;
+        }
+
+        .values-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             margin-bottom: 60px;
         }
 
-        .article-card {
+        .value-card {
             background: var(--bg-card);
             border: 1px solid var(--border-card);
             border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
             backdrop-filter: blur(5px);
         }
 
-        .article-card:hover {
+        .value-card:hover {
             transform: translateY(-5px);
             border-color: var(--border-card-hover);
-            box-shadow: 0 10px 20px rgba(28, 188, 212, 0.05);
         }
 
-        .article-image {
-            width: 100%;
-            height: 180px;
-            background: #0c1c24;
-            object-fit: cover;
-            border-bottom: 1px solid var(--border-card);
-        }
-
-        .article-body {
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .article-meta {
-            font-size: 0.75rem;
+        .value-icon {
+            font-size: 1.5rem;
             color: var(--color-text-accent);
-            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 600;
             letter-spacing: 1px;
-            margin-bottom: 10px;
+            text-transform: uppercase;
         }
 
-        .article-title {
-            font-size: 1.3rem;
+        .value-title {
+            font-size: 1.2rem;
             color: var(--color-text-light);
             margin-bottom: 12px;
             font-weight: 500;
-            line-height: 1.4;
         }
 
-        .article-excerpt {
+        .value-desc {
             font-size: 0.95rem;
             color: var(--color-text-secondary);
             line-height: 1.6;
-            margin-bottom: 20px;
             font-weight: 300;
-            flex-grow: 1;
-        }
-
-        .read-more {
-            color: var(--color-text-white);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: color 0.3s ease;
-        }
-
-        .read-more:hover {
-            color: var(--color-text-accent);
         }
 
         .footer {
@@ -209,7 +200,8 @@
 
         @media (max-width: 600px) {
             .title { font-size: 2rem; }
-            .articles-grid { grid-template-columns: 1fr; }
+            .story-section { padding: 25px; }
+            .values-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -217,51 +209,44 @@
 
     <header class="header">
         <div class="logo">
-            <img src="../LOGO.png" alt="Logo AIMRUA" class="logo-image">
+            <img src="LOGO.png" alt="Logo AIMRUA" class="logo-image">
         </div>
         <nav class="nav-links">
-            <a href="../index.html">Inicio</a>
-            <a href="../about.html">Sobre Nosotros</a>
+            <a href="index.html">Inicio</a>
+            <a href="AMAZON/GENERAL.html">Blog</a>
         </nav>
     </header>
 
     <main class="main-content">
-        <div class="blog-header">
-            <p class="tagline">Nuestras Publicaciones</p>
-            <h1 class="title">Bitácora Digital</h1>
+        <div class="about-header">
+            <p class="tagline">Conócenos</p>
+            <h1 class="title">Nuestra Identidad</h1>
             <div class="divider"></div>
         </div>
 
-        <section class="articles-grid">
-            <article class="article-card">
-                <div class="article-image" style="background: linear-gradient(135deg, #0c3a4d, #050608);"></div>
-                <div class="article-body">
-                    <span class="article-meta">03 Julio, 2026 • Tecnología</span>
-                    <h2 class="article-title">El futuro del desarrollo web con CSS moderno</h2>
-                    <p class="article-excerpt">Exploramos cómo las nuevas propiedades de CSS están cambiando la forma en que estructuramos y diseñamos interfaces sin depender de pesados frameworks.</p>
-                    <a href="articulo-1.html" class="read-more">Leer artículo →</a>
-                </div>
-            </article>
+        <section class="story-section">
+            <p>En <span class="highlight-text">AIMRUA.NET</span>, nos apasiona conectar ideas, tecnología y diseño para construir experiencias digitales que inspiren. Nacimos con el firme propósito de crear un espacio donde la innovación y la simplicidad convergen de manera natural.</p>
+            <p>Creemos que la era digital exige soluciones claras, dinámicas y estéticas. Por eso, dedicamos nuestros esfuerzos a explorar nuevas frontiers tecnológicas, compartiendo nuestro conocimiento a través de nuestra bitácora y desarrollando herramientas que impulsen el crecimiento de nuestra comunidad.</p>
+        </section>
 
-            <article class="article-card">
-                <div class="article-image" style="background: linear-gradient(135deg, #1cbcd433, #0c1117);"></div>
-                <div class="article-body">
-                    <span class="article-meta">28 Junio, 2026 • Diseño</span>
-                    <h2 class="article-title">La importancia de la experiencia de usuario minimalista</h2>
-                    <p class="article-excerpt">Menos es más. Analizamos el impacto visual y de rendimiento al reducir los elementos innecesarios en tus landing pages de lanzamiento.</p>
-                    <a href="articulo-2.html" class="read-more">Leer artículo →</a>
-                </div>
-            </article>
+        <section class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">01</div>
+                <h2 class="value-title">Innovación</h2>
+                <p class="value-desc">Buscamos constantemente evolucionar nuestras metodologías y mantenernos a la vanguardia de los estándares tecnológicos actuales.</p>
+            </div>
 
-            <article class="article-card">
-                <div class="article-image" style="background: linear-gradient(135deg, #050608, #0c3a4d);"></div>
-                <div class="article-body">
-                    <span class="article-meta">15 Junio, 2026 • Comunidad</span>
-                    <h2 class="article-title">Detrás de escena: Creando AIMRUA.NET</h2>
-                    <p class="article-excerpt">Te contamos el proceso creativo, la elección de nuestra paleta de colores corporativa y qué esperar de nuestro próximo gran lanzamiento.</p>
-                    <a href="articulo-3.html" class="read-more">Leer artículo →</a>
-                </div>
-            </article>
+            <div class="value-card">
+                <div class="value-icon">02</div>
+                <h2 class="value-title">Diseño Limpio</h2>
+                <p class="value-desc">Nos regimos bajo la premisa de que la elegancia y la usabilidad van de la mano. Menos es más cuando se comunica con claridad.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">03</div>
+                <h2 class="value-title">Comunidad</h2>
+                <p class="value-desc">Creamos este ecosistema para aportar valor. Nuestro conocimiento está al servicio de quienes buscan construir el futuro web hoy.</p>
+            </div>
         </section>
     </main>
 
